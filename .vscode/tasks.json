@@ -5,6 +5,10 @@
             "label": "C/C++: g++-14 build active file",
             "command": "/opt/homebrew/bin/g++-14",
             "args": [
+                "-std=gnu++17",
+                "-Wall",
+                "-Wextra",
+                "-O2",
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
