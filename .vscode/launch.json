@@ -23,14 +23,20 @@
             "name": "(lldb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}",
-            "args": ["<" ,"test.txt"],
+            "program": "${fileDirname}/bin/${fileBasenameNoExtension}.bin",
+            "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "lldb",
-            "preLaunchTask": "C/C++: g++-14 build active file"
+            "setupCommands": [
+                {"text": "settings set target.input-path input.txt"}
+            ]
+            // ,
+            // "logging": {
+            //     "engineLogging": true
+            // }
         }
     ]
 }

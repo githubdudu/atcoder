@@ -1,1 +1,4 @@
 atcoder/*
+bin/
+# debug folder
+*.dSYM/
