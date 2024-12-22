@@ -20,7 +20,7 @@
             ]
         },
         {
-            "name": "(lldb) Launch",
+            "name": "C/C++: clang++ build and debug active file",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/bin/${fileBasenameNoExtension}.bin",
@@ -31,12 +31,11 @@
             "externalConsole": false,
             "MIMode": "lldb",
             "setupCommands": [
-                {"text": "settings set target.input-path input.txt"}
-            ]
-            // ,
-            // "logging": {
-            //     "engineLogging": true
-            // }
+                {
+                    "text": "settings set target.input-path input.txt"
+                }
+            ],
+            "preLaunchTask": "C/C++: clang++ build active file"
         }
     ]
 }
