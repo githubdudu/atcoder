@@ -20,7 +20,7 @@
             ]
         },
         {
-            "name": "C/C++: clang++ build and debug active file",
+            "name": "Debug by microsoft C/C++ extension: clang++ build and debug active file",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/bin/${fileBasenameNoExtension}.bin",
@@ -36,6 +36,13 @@
                 }
             ],
             "preLaunchTask": "C/C++: clang++ build active file"
+        }, 
+        {
+            "name": "Launch by lldb extension",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${fileDirname}/bin/${fileBasenameNoExtension}.bin",
+            "stdio": ["input.txt", "output.txt"]
         }
     ]
 }
