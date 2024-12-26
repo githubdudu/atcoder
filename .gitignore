@@ -2,3 +2,6 @@ atcoder/*
 bin/
 # debug folder
 *.dSYM/
+
+input.txt
+output.txt
