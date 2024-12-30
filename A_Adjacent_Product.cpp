@@ -9,18 +9,7 @@ using namespace atcoder;
 #define repr(i, start, end) for(int i = (end); i >= (start); i--)
 int main()
 {
-    int N, M; cin >> N >> M;
     int N; cin >> N;
     int A[N]; re(i, N) cin >> A[i];
-}
-
-void codesnippets() {
-    /* bitset */
-    cout << N << endl;
-    long long C = 9999999;
-    std::bitset<60> b1(C); // 
-    std::bitset<60> b2{b1}; // 
-    b1.count(); // get count of 1
-    b1[1] = true; // getter and setter, index 0 start from right most
-    b1.to_string(); b1.to_ullong(); b1.to_ulong(); //convertion
+    re(i, N - 1) cout << A[i] * A[i + 1] << " ";
 }
