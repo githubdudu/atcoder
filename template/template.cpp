@@ -7,16 +7,23 @@ using namespace atcoder;
 #define re(i,n) for(int i = 0; i < (n); ++i)
 #define rep(i, start, end) for(int i = (start); i < (end); i++)
 #define repr(i, start, end) for(int i = (end); i >= (start); i--)
+#define cinarr(arr, en) for(ll (i) = 0; (i) < en; (i)++){cin >> arr[i];}
+#define coutarr(arr, en) for(ll (i) = 0; (i) < en; (i)++){cout << arr[i] << " \n"[i+1 == n];}
+#define NO cout << "NO\n"
+#define YES cout << "YES\n"
+void fast(){ios_base::sync_with_stdio(false);}
+
 int main()
 {
+    fast();
     int N, M; cin >> N >> M;
     int N; cin >> N;
     int A[N]; re(i, N) cin >> A[i];
+    cout << N << endl;
 }
 
 void codesnippets() {
     /* bitset */
-    cout << N << endl;
     long long C = 9999999;
     std::bitset<60> b1(C); // 
     std::bitset<60> b2{b1}; // 

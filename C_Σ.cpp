@@ -9,12 +9,16 @@ using namespace atcoder;
 #define repr(i, start, end) for(int i = (end); i >= (start); i--)
 int main()
 {
-    long long N, K; cin >> N >> K;
-    set<int> Ai; re(i, N) {int a; cin >> a; Ai.insert(a);}
+    ios_base::sync_with_stdio(false);
 
+    long long N, K; cin >> N >> K;
+    int Ai[N]; re(i, N) { cin >> Ai[i];}
+
+    sort(Ai, Ai + N);
     auto ans = (1 + K) * K / 2;
-    for(auto a: Ai) {
-        if (a >= 1 and a <= K) ans -= a;
+    rep(i, 1, N) {
+        if (Ai[i] != Ai[i - 1] and Ai[i] <= K) ans -= Ai[i];
     }
+    if (Ai[0] <= K) ans -= Ai[0];
     cout << ans << endl;
 }
