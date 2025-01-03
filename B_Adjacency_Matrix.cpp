@@ -19,31 +19,20 @@ auto Cn2(ll n) {return n * (n - 1) / 2;}
    Use (1<<i)&binary to check ith bit.
    Use (1<<i)^binary to toggle ith bit.
 */
-
+int A[100][100];
+vector<int> v[100];
 int main()
 {
     fast();
-    int N, M; cin >> N >> M;
     int N; cin >> N;
-    int A[N]; re(i, N) cin >> A[i];
-    cout << N << endl;
-}
+    re(i, N) {
+        re(j, N) {
+            cin >> A[i][j];
+            if (A[i][j]) v[i].push_back(j + 1);
+        }
+    }
 
-map<char, ll> iter_to_map(string& S) {
-    map<char, ll> m; for (auto ele: S) m[ele]++;
-    return m;
-}
-
-set<char> iter_to_set(string& S) {
-    return std::set<char> (S.begin(), S.end());
-}
-
-void codesnippets() {
-    /* bitset */
-    long long C = 9999999;
-    std::bitset<60> b1(C); // 
-    std::bitset<60> b2{b1}; // 
-    b1.count(); // get count of 1
-    b1[1] = true; // getter and setter, index 0 start from right most
-    b1.to_string(); b1.to_ullong(); b1.to_ulong(); //convertion
+    re(i, N) {
+        if (v[i].size()) coutarr(v[i], v[i].size());
+    }
 }

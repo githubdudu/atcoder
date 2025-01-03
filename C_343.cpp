@@ -19,31 +19,30 @@ auto Cn2(ll n) {return n * (n - 1) / 2;}
    Use (1<<i)&binary to check ith bit.
    Use (1<<i)^binary to toggle ith bit.
 */
+ll N;
 
+bool pali(ll num) {
+    string str = to_string(num);
+    int l = 0, r = str.length() - 1;
+    while (l < r) {
+        if (str[l] == str[r]) {l++; r--;}
+        else return false;
+    }
+    return true;
+}
 int main()
 {
     fast();
-    int N, M; cin >> N >> M;
-    int N; cin >> N;
-    int A[N]; re(i, N) cin >> A[i];
-    cout << N << endl;
-}
-
-map<char, ll> iter_to_map(string& S) {
-    map<char, ll> m; for (auto ele: S) m[ele]++;
-    return m;
-}
-
-set<char> iter_to_set(string& S) {
-    return std::set<char> (S.begin(), S.end());
-}
-
-void codesnippets() {
-    /* bitset */
-    long long C = 9999999;
-    std::bitset<60> b1(C); // 
-    std::bitset<60> b2{b1}; // 
-    b1.count(); // get count of 1
-    b1[1] = true; // getter and setter, index 0 start from right most
-    b1.to_string(); b1.to_ullong(); b1.to_ulong(); //convertion
+    cin >> N;
+    int ans = pow(N, 1.0/3) + 1;
+    while (true)
+    {
+        ll pow3 = pow(ans, 3);
+        if (pow3 <= N and pali(pow3)) {
+            cout << pow3 << endl;
+            return 0;
+        } else {
+            ans--;
+        }
+    }
 }

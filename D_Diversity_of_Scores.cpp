@@ -19,31 +19,27 @@ auto Cn2(ll n) {return n * (n - 1) / 2;}
    Use (1<<i)&binary to check ith bit.
    Use (1<<i)^binary to toggle ith bit.
 */
+ll N, T;
 
 int main()
 {
     fast();
-    int N, M; cin >> N >> M;
-    int N; cin >> N;
-    int A[N]; re(i, N) cin >> A[i];
-    cout << N << endl;
-}
+    cin >> N >> T;
+    
+    ll count[N + 1]; re(i, N+1) count[i]=0;
+    unordered_map<ll, int> ans_map; ans_map[0] = N;
+    vector<vector<int>> c(T, vector<int>(2));
+    re(i, T) cin >> c[i][0] >> c[i][1]; 
+    re(i, T) {
+        ll prev = count[c[i][0]];
+        count[c[i][0]] += c[i][1];
+        ll curr = count[c[i][0]];
 
-map<char, ll> iter_to_map(string& S) {
-    map<char, ll> m; for (auto ele: S) m[ele]++;
-    return m;
-}
-
-set<char> iter_to_set(string& S) {
-    return std::set<char> (S.begin(), S.end());
-}
-
-void codesnippets() {
-    /* bitset */
-    long long C = 9999999;
-    std::bitset<60> b1(C); // 
-    std::bitset<60> b2{b1}; // 
-    b1.count(); // get count of 1
-    b1[1] = true; // getter and setter, index 0 start from right most
-    b1.to_string(); b1.to_ullong(); b1.to_ulong(); //convertion
+        ans_map[prev]--;
+        ans_map[curr]++;
+        if(ans_map[prev] == 0){
+            ans_map.erase(prev);
+        }
+        cout << ans_map.size() << endl;
+    }
 }
