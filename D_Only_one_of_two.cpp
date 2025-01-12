@@ -19,37 +19,33 @@ auto Cn2(ll n) {return n * (n - 1) / 2;}
    Use (1<<i)&binary to check ith bit.
    Use (1<<i)^binary to toggle ith bit.
 */
-
-int main()
-{
-    fast();
-    int N, M; cin >> N >> M;
-    int N; cin >> N;
-    int A[N]; re(i, N) cin >> A[i];
-    cout << N << endl;
+ll N,M, K;
+void disp(ll num){
+    ll n1 = num / N * N;
+    ll n2 = num / M * M;
+    if (n1 != n2) cout << max(n1, n2);
+    else cout << max(n1 - N, n2 - M);
 }
-
-map<char, ll> iter_to_map(string& S) {
-    map<char, ll> m; for (auto ele: S) m[ele]++;
-    return m;
-}
-
-set<char> iter_to_set(string& S) {
-    return std::set<char> (S.begin(), S.end());
-}
-
 ll gcd(ll a, ll b) {
     if (a < b) return gcd(b, a);
     if (a % b==0) return b;
     else return gcd(b, a % b);
 }
-
-void codesnippets() {
-    /* bitset */
-    long long C = 9999999;
-    std::bitset<60> b1(C); // 
-    std::bitset<60> b2{b1}; // 
-    b1.count(); // get count of 1
-    b1[1] = true; // getter and setter, index 0 start from right most
-    b1.to_string(); b1.to_ullong(); b1.to_ulong(); //convertion
+int main()
+{
+    fast();
+     cin >>N>>M>>K;
+    ll left = 1, right = 1e18;
+    while (left < right) {
+        ll mid = (left + right) / 2;
+        ll ith = mid / N + mid / M - 2 * (mid / (N*M / gcd(N, M)));
+        if (ith == K) {
+            disp(mid);
+            return 0;
+        } else if (ith > K) {
+            right = mid;
+        } else {
+            left = mid;
+        }
+    }
 }
