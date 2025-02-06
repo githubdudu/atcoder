@@ -115,5 +115,6 @@
         "syncstream": "cpp",
         "text_encoding": "cpp",
         "thread": "cpp"
-    }
+    },
+    "C_Cpp.default.compilerPath": "d:\\cygwin64\\bin\\g++.exe"
 }
