@@ -29,6 +29,24 @@
             "cppStandard": "gnu++17",
             "intelliSenseMode": "windows-gcc-x64",
             "compilerPath": "D:/cygwin64/bin/g++.exe"
+        },
+        {
+            "name": "Linux",
+            "includePath": [
+                "/home/dudulinux/codes/atcoder/**"
+            ],
+            "defines": [],
+            "mergeConfigurations": false,
+            "compilerPath": "/usr/bin/gcc",
+            "browse": {
+                "path": [
+                    "/home/dudulinux/codes/atcoder/**",
+                    "${workspaceFolder}"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "cStandard": "c17",
+            "cppStandard": "c++20"
         }
     ],
     "version": 4
